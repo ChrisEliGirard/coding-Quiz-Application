@@ -1,49 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
-    <title>Coding Quiz</title>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <title>Coding Quiz</title>
   </head>
-
+  <!-- The Body or Window of the Application-->
   <body>
     <header>
-        <h1>Coding Quiz 1</h1>
-        <button class="startButton">Begin</button>
+      <!-- For The Click Event Listener That will display highscores-->
+      <div id="leaderboard" class="">View High Scores</div>
+      <!-- Where the timer will live -->
+      <div>Time Left: <p id="timer"></p></div>
     </header>
     
+    <!-- Where the quiz will be rendered -->
     <main>
-        <section id="questionBox">            
-            <form id="question" type="radio">
-                
-                <div id="questionAnswers" type="text"></div>
-                
-                <input type="radio" name="answer" value="answer-1">
-                <input type="radio" name="answer" value="answer-2">
-                <input type="radio" name="answer" value="answer-3">
-
-                <br>
-                
-                <button type="button" onclick="selectedRadioValue()">
-                    Submit
-                </button>
-                
-                <br>
-            </form>
-        </section>
-
-        <aside id="timer">
-            <div>Time Left: 90</div>
-        </aside>
-
-        <aside id="tracker">
-            <div>Questions Left: 15</div>
-        </aside>
+      <!-- This Section will act as our container to dynamically render the quiz itself-->
+      <section id="quiz"></section>
     </main>
 
+    <!-- Quiz Application Script -->
     <script src="Assets/scripts/script.js"></script>
-
-    <footer>
-    </footer>
   </body>
+</html>
