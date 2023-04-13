@@ -5,7 +5,7 @@ const timerEl = document.getElementById('timer');
 const quizEl = document.getElementById('quiz');
 
 // Initializing Global Const Variables for the Quiz Application
-const timeAllotted = 90;
+const timeAllotted = 12;
 const timePenalty = 10;
 const leaderBoardSize = 10;
 const quizLength = 10;
@@ -159,11 +159,11 @@ const renderQuizQuestion = () => {
    let questionFrame = `
     <h1>${currentQuestion.question}</h1>
     <div id='answer-feedback'></div>
-    <section>
-      <p id='11'>${currentQuestion.answers[0]}</p>
-      <p id='12'>${currentQuestion.answers[1]}</p>
-      <p id='13'>${currentQuestion.answers[2]}</p>
-      <p id='14'>${currentQuestion.answers[3]}</p>
+    <section class='answer-section'>
+      <button id='11'>${currentQuestion.answers[0]}</button>
+      <button id='12'>${currentQuestion.answers[1]}</button>
+      <button id='13'>${currentQuestion.answers[2]}</button>
+      <button id='14'>${currentQuestion.answers[3]}</button>
     </section>
   `;
   quizEl.insertAdjacentHTML('afterbegin', questionFrame)
@@ -192,14 +192,15 @@ const nextQuestion = () => {
 // function that runs on each 1s interval to check if the quiz needs to continue or end
 const continueQuiz = () => {
   if (timer <= 10) {
-    timerEl.setAttribute('class', 'danger');
-  } else if (timer <= 0 || questionIndex >= quizLength) {
+    timerEl.setAttribute('class', 'hurry');
+  }
+  if (timer < 1 || questionIndex >= quizLength) {
     clearInterval(testTime);
+    timerEl.removeAttribute('class', 'hurry')
     timerEl.textContent = '--';
     renderScoreForm();
-  } else {
-    renderQuizQuestion();
-  };
+  }
+  renderQuizQuestion();
 };
 
 // Changes the timer element as well as call the continueQuiz function every second

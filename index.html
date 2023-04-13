@@ -4,16 +4,19 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/reset.css" />
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <title>Coding Quiz</title>
   </head>
   <!-- The Body or Window of the Application-->
   <body>
     <header>
-      <!-- For The Click Event Listener That will display highscores-->
-      <div id="leaderboard" class="">View High Scores</div>
-      <!-- Where the timer will live -->
-      <div>Time Left: <p id="timer"></p></div>
+      <section>
+        <!-- Where the timer will live -->
+        <div id="timer-container">Time Left: <p id="timer"></p></div>
+        <!-- For The Click Event Listener That will display highscores-->
+        <div id="leaderboard">View High Scores</div>
+      </section>
     </header>
     
     <!-- Where the quiz will be rendered -->
