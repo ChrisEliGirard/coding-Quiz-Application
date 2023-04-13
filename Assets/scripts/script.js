@@ -8,7 +8,7 @@ const quizEl = document.getElementById('quiz');
 const timeAllotted = 90;
 const timePenalty = 10;
 const leaderBoardSize = 10;
-const quizLength = 2;
+const quizLength = 10;
 
 // Initializing Global Variable to be reset on quiz restart or manipulated during the quiz
 let score;
